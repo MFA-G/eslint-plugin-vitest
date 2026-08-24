@@ -136,6 +136,20 @@ ruleTester.run(rule.name, rule, {
       `,
       filename: 'myFunction.test.ts',
     },
+    {
+      code: `
+        import type * as myFunction from "./myFunction"
+        describe("myFunction", () => {})
+      `,
+      filename: 'myFunction.test.ts',
+    },
+    {
+      code: `
+        import type * as myFunction from "./myFunction"
+        describe(myFunction.name, () => {})
+      `,
+      filename: 'myFunction.test.ts',
+    },
   ],
   invalid: [
     {
